@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vibe_clone_coding/screens/home/audio_screen.dart';
+import 'package:vibe_clone_coding/screens/home/chart_screen.dart';
+import 'package:vibe_clone_coding/screens/home/profile_screen.dart';
+import 'package:vibe_clone_coding/screens/home/search_screen.dart';
+import 'package:vibe_clone_coding/screens/home/today_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,10 +33,19 @@ class _HomeScreenState extends State<HomeScreen> {
     "보관함",
   ];
 
+  final _bodyScreen = [
+    TodayScreen(),
+    ChartScreen(),
+    AudioScreen(),
+    SearchScreen(),
+    ProfileScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black87,
+      body: _bodyScreen[_selected],
       bottomNavigationBar: Container(
         height: 50,
         child: Row(
